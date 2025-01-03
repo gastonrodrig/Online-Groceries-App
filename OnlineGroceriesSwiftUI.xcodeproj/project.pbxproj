@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		045F5C1D2D2390E600DD8ACC /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 045F5C1C2D2390E600DD8ACC /* CountryPicker */; };
-		045F5C2A2D23C89D00DD8ACC /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 045F5C292D23C89D00DD8ACC /* FirebaseAuth */; };
-		045F5C2C2D23C89D00DD8ACC /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 045F5C2B2D23C89D00DD8ACC /* FirebaseFirestore */; };
+		0265268AC076A72572FBCEE6 /* Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66B7C23E65DCB57032748D64 /* Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework */; };
+		0415746D2D275CC800941805 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 0415746C2D275CC800941805 /* FirebaseAuth */; };
+		041574702D275CDC00941805 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 0415746F2D275CDC00941805 /* FacebookLogin */; };
+		041574732D275CEE00941805 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 041574722D275CEE00941805 /* GoogleSignIn */; };
+		041574752D275CEE00941805 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 041574742D275CEE00941805 /* GoogleSignInSwift */; };
+		041574782D27604000941805 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 041574772D27604000941805 /* CountryPicker */; };
+		045F5C802D2461D300DD8ACC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */; };
+		067EFBC9A4E6A0F2C1A3B102 /* Pods_OnlineGroceriesSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419A54DE7D29718144210164 /* Pods_OnlineGroceriesSwiftUITests.framework */; };
+		DF33A37F3C565C4E4361BBDC /* Pods_OnlineGroceriesSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C112B7E35B91A4B7015898B /* Pods_OnlineGroceriesSwiftUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,11 +36,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		008EDFA349C052E8F70EE5C0 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests/Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		044671582D23517000204EA4 /* OnlineGroceriesSwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnlineGroceriesSwiftUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		045F5C4C2D2442B100DD8ACC /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		045F5C4D2D24451B00DD8ACC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04C0AD102D23550B00F442D5 /* OnlineGroceriesSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineGroceriesSwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04C0AD112D23550B00F442D5 /* OnlineGroceriesSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnlineGroceriesSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C112B7E35B91A4B7015898B /* Pods_OnlineGroceriesSwiftUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineGroceriesSwiftUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		419A54DE7D29718144210164 /* Pods_OnlineGroceriesSwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineGroceriesSwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		59CB1DC462462AAB92A7C6B1 /* Pods-OnlineGroceriesSwiftUI.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUI.debug.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUI/Pods-OnlineGroceriesSwiftUI.debug.xcconfig"; sourceTree = "<group>"; };
+		5A83C27366C151C857A4B1C8 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.release.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests/Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.release.xcconfig"; sourceTree = "<group>"; };
+		66B7C23E65DCB57032748D64 /* Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8201181167A8008B31F3689C /* Pods-OnlineGroceriesSwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUITests/Pods-OnlineGroceriesSwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A1055D042A9633B8932C8B23 /* Pods-OnlineGroceriesSwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUITests/Pods-OnlineGroceriesSwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DD13D1616EA1AE21CA4577DE /* Pods-OnlineGroceriesSwiftUI.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OnlineGroceriesSwiftUI.release.xcconfig"; path = "Target Support Files/Pods-OnlineGroceriesSwiftUI/Pods-OnlineGroceriesSwiftUI.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -73,9 +89,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				045F5C1D2D2390E600DD8ACC /* CountryPicker in Frameworks */,
-				045F5C2A2D23C89D00DD8ACC /* FirebaseAuth in Frameworks */,
-				045F5C2C2D23C89D00DD8ACC /* FirebaseFirestore in Frameworks */,
+				041574782D27604000941805 /* CountryPicker in Frameworks */,
+				041574752D275CEE00941805 /* GoogleSignInSwift in Frameworks */,
+				041574732D275CEE00941805 /* GoogleSignIn in Frameworks */,
+				0415746D2D275CC800941805 /* FirebaseAuth in Frameworks */,
+				041574702D275CDC00941805 /* FacebookLogin in Frameworks */,
+				DF33A37F3C565C4E4361BBDC /* Pods_OnlineGroceriesSwiftUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +102,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				067EFBC9A4E6A0F2C1A3B102 /* Pods_OnlineGroceriesSwiftUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0265268AC076A72572FBCEE6 /* Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +128,33 @@
 				044671582D23517000204EA4 /* OnlineGroceriesSwiftUI.app */,
 				04C0AD102D23550B00F442D5 /* OnlineGroceriesSwiftUITests.xctest */,
 				04C0AD112D23550B00F442D5 /* OnlineGroceriesSwiftUIUITests.xctest */,
+				045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */,
+				F2936E17BE97220F756E64CE /* Pods */,
+				6B8BFDDDE4A16E24A4F483A9 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		6B8BFDDDE4A16E24A4F483A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0C112B7E35B91A4B7015898B /* Pods_OnlineGroceriesSwiftUI.framework */,
+				66B7C23E65DCB57032748D64 /* Pods_OnlineGroceriesSwiftUI_OnlineGroceriesSwiftUIUITests.framework */,
+				419A54DE7D29718144210164 /* Pods_OnlineGroceriesSwiftUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F2936E17BE97220F756E64CE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				59CB1DC462462AAB92A7C6B1 /* Pods-OnlineGroceriesSwiftUI.debug.xcconfig */,
+				DD13D1616EA1AE21CA4577DE /* Pods-OnlineGroceriesSwiftUI.release.xcconfig */,
+				008EDFA349C052E8F70EE5C0 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.debug.xcconfig */,
+				5A83C27366C151C857A4B1C8 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.release.xcconfig */,
+				8201181167A8008B31F3689C /* Pods-OnlineGroceriesSwiftUITests.debug.xcconfig */,
+				A1055D042A9633B8932C8B23 /* Pods-OnlineGroceriesSwiftUITests.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -117,6 +164,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DDB73E2D1F919000E47C4A /* Build configuration list for PBXNativeTarget "OnlineGroceriesSwiftUI" */;
 			buildPhases = (
+				0D2826D978A545E828F16F39 /* [CP] Check Pods Manifest.lock */,
 				04DDB7162D1F918F00E47C4A /* Sources */,
 				04DDB7172D1F918F00E47C4A /* Frameworks */,
 				04DDB7182D1F918F00E47C4A /* Resources */,
@@ -130,9 +178,11 @@
 			);
 			name = OnlineGroceriesSwiftUI;
 			packageProductDependencies = (
-				045F5C1C2D2390E600DD8ACC /* CountryPicker */,
-				045F5C292D23C89D00DD8ACC /* FirebaseAuth */,
-				045F5C2B2D23C89D00DD8ACC /* FirebaseFirestore */,
+				0415746C2D275CC800941805 /* FirebaseAuth */,
+				0415746F2D275CDC00941805 /* FacebookLogin */,
+				041574722D275CEE00941805 /* GoogleSignIn */,
+				041574742D275CEE00941805 /* GoogleSignInSwift */,
+				041574772D27604000941805 /* CountryPicker */,
 			);
 			productName = OnlineGroceriesSwiftUI;
 			productReference = 044671582D23517000204EA4 /* OnlineGroceriesSwiftUI.app */;
@@ -142,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DDB7412D1F919000E47C4A /* Build configuration list for PBXNativeTarget "OnlineGroceriesSwiftUITests" */;
 			buildPhases = (
+				37E673033B2C548B583CEEAB /* [CP] Check Pods Manifest.lock */,
 				04DDB7262D1F919000E47C4A /* Sources */,
 				04DDB7272D1F919000E47C4A /* Frameworks */,
 				04DDB7282D1F919000E47C4A /* Resources */,
@@ -155,8 +206,6 @@
 				04DDB72D2D1F919000E47C4A /* OnlineGroceriesSwiftUITests */,
 			);
 			name = OnlineGroceriesSwiftUITests;
-			packageProductDependencies = (
-			);
 			productName = OnlineGroceriesSwiftUITests;
 			productReference = 04C0AD102D23550B00F442D5 /* OnlineGroceriesSwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -165,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04DDB7442D1F919000E47C4A /* Build configuration list for PBXNativeTarget "OnlineGroceriesSwiftUIUITests" */;
 			buildPhases = (
+				CF6FDA9F255ADD82658F0A7B /* [CP] Check Pods Manifest.lock */,
 				04DDB7302D1F919000E47C4A /* Sources */,
 				04DDB7312D1F919000E47C4A /* Frameworks */,
 				04DDB7322D1F919000E47C4A /* Resources */,
@@ -178,8 +228,6 @@
 				04DDB7372D1F919000E47C4A /* OnlineGroceriesSwiftUIUITests */,
 			);
 			name = OnlineGroceriesSwiftUIUITests;
-			packageProductDependencies = (
-			);
 			productName = OnlineGroceriesSwiftUIUITests;
 			productReference = 04C0AD112D23550B00F442D5 /* OnlineGroceriesSwiftUIUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -217,8 +265,10 @@
 			mainGroup = 04DDB7112D1F918F00E47C4A;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				045F5C1B2D2390E600DD8ACC /* XCRemoteSwiftPackageReference "CountryPicker" */,
-				045F5C282D23C89D00DD8ACC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0415746B2D275CC800941805 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				0415746E2D275CDC00941805 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				041574712D275CEE00941805 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+				041574762D27604000941805 /* XCRemoteSwiftPackageReference "CountryPicker" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04DDB7112D1F918F00E47C4A;
@@ -237,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045F5C802D2461D300DD8ACC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +306,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D2826D978A545E828F16F39 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineGroceriesSwiftUI-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37E673033B2C548B583CEEAB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineGroceriesSwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF6FDA9F255ADD82658F0A7B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		04DDB7162D1F918F00E47C4A /* Sources */ = {
@@ -415,10 +535,12 @@
 		};
 		04DDB73F2D1F919000E47C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59CB1DC462462AAB92A7C6B1 /* Pods-OnlineGroceriesSwiftUI.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = OnlineGroceriesSwiftUI/OnlineGroceriesSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineGroceriesSwiftUI/Preview Content\"";
@@ -450,10 +572,12 @@
 		};
 		04DDB7402D1F919000E47C4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD13D1616EA1AE21CA4577DE /* Pods-OnlineGroceriesSwiftUI.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = OnlineGroceriesSwiftUI/OnlineGroceriesSwiftUI.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OnlineGroceriesSwiftUI/Preview Content\"";
@@ -485,6 +609,7 @@
 		};
 		04DDB7422D1F919000E47C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8201181167A8008B31F3689C /* Pods-OnlineGroceriesSwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -503,6 +628,7 @@
 		};
 		04DDB7432D1F919000E47C4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A1055D042A9633B8932C8B23 /* Pods-OnlineGroceriesSwiftUITests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -521,6 +647,7 @@
 		};
 		04DDB7452D1F919000E47C4A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 008EDFA349C052E8F70EE5C0 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -537,6 +664,7 @@
 		};
 		04DDB7462D1F919000E47C4A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A83C27366C151C857A4B1C8 /* Pods-OnlineGroceriesSwiftUI-OnlineGroceriesSwiftUIUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -593,15 +721,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		045F5C1B2D2390E600DD8ACC /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/mobven/CountryPicker.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.3;
-			};
-		};
-		045F5C282D23C89D00DD8ACC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		0415746B2D275CC800941805 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -609,23 +729,57 @@
 				minimumVersion = 11.6.0;
 			};
 		};
+		0415746E2D275CDC00941805 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
+		041574712D275CEE00941805 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+		041574762D27604000941805 /* XCRemoteSwiftPackageReference "CountryPicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mobven/CountryPicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		045F5C1C2D2390E600DD8ACC /* CountryPicker */ = {
+		0415746C2D275CC800941805 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 045F5C1B2D2390E600DD8ACC /* XCRemoteSwiftPackageReference "CountryPicker" */;
-			productName = CountryPicker;
-		};
-		045F5C292D23C89D00DD8ACC /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 045F5C282D23C89D00DD8ACC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 0415746B2D275CC800941805 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		045F5C2B2D23C89D00DD8ACC /* FirebaseFirestore */ = {
+		0415746F2D275CDC00941805 /* FacebookLogin */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 045F5C282D23C89D00DD8ACC /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
+			package = 0415746E2D275CDC00941805 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		041574722D275CEE00941805 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 041574712D275CEE00941805 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		041574742D275CEE00941805 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 041574712D275CEE00941805 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
+		};
+		041574772D27604000941805 /* CountryPicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 041574762D27604000941805 /* XCRemoteSwiftPackageReference "CountryPicker" */;
+			productName = CountryPicker;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

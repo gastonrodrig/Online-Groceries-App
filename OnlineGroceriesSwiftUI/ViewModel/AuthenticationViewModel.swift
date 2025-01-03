@@ -8,8 +8,8 @@
 import SwiftUI
 import FirebaseAuth
 
-class MainViewModel: ObservableObject {
-    static let shared = MainViewModel()
+class AuthenticationViewModel: ObservableObject {
+    static let shared = AuthenticationViewModel()
 
     // MARK: - Propiedades Observables
     @Published var txtUsername: String = ""
@@ -88,30 +88,31 @@ class MainViewModel: ObservableObject {
     }
     
     // MARK: - Google Login
-       func serviceCallGoogleLogin() {
-           FirebaseAuthService.shared.loginWithGoogle { result in
-               switch result {
-               case .success(let user):
-                   print("User logged in: \(user.email ?? "Unknown email")")
-               case .failure(let error):
-                   print("Login failed with error: \(error.localizedDescription)")
-               }
+   func serviceCallGoogleLogin() {
+       FirebaseAuthService.shared.loginWithGoogle { result in
+           switch result {
+           case .success(let user):
+               self.setUserData(user: user)
+               print("User logged in: \(String(describing: user.email))")
+           case .failure(let error):
+               print("Login failed with error: \(error.localizedDescription)")
            }
        }
+   }
 
-       // MARK: - Facebook Login
-       func serviceCallFacebookLogin(presentingViewController: UIViewController) {
-           FirebaseAuthService.shared.loginWithFacebook(presentingViewController: presentingViewController) { [weak self] result in
-               DispatchQueue.main.async {
-                   switch result {
-                   case .success(let user):
-                       self?.setUserData(user: user)
-                   case .failure(let error):
-                       self?.updateError(message: error.localizedDescription)
-                   }
-               }
+   // MARK: - Facebook Login
+   func serviceCallFacebookLogin() {
+       FirebaseAuthService.shared.loginWithFacebook { result in
+           switch result {
+           case .success(let user):
+               self.setUserData(user: user)
+               print("User logged in: \(String(describing: user.email))")
+           case .failure(let error):
+               print("Login failed with error: \(error.localizedDescription)")
            }
+           
        }
+   }
 
     // MARK: - Guardar Datos del Usuario
     func setUserData(user: User) {

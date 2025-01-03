@@ -69,7 +69,7 @@ struct SignInView: View {
                         .padding(.bottom, 25)
                     
                     Button {
-
+                        AuthenticationViewModel.shared.serviceCallGoogleLogin()
                     } label: {
                         Image("google_logo")
                             .resizable()
@@ -87,7 +87,7 @@ struct SignInView: View {
                     .padding(.bottom, 8)
                     
                     Button {
-
+                        AuthenticationViewModel.shared.serviceCallFacebookLogin()
                     } label: {
                         Image("fb_logo")
                             .resizable()

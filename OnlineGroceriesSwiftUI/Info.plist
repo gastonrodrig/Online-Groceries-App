@@ -2,12 +2,55 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIAppFonts</key>
-	<array>
-		<string>Gilroy-Bold.ttf</string>
-		<string>Gilroy-Medium.ttf</string>
-		<string>Gilroy-Regular.ttf</string>
-		<string>Gilroy-SemiBold.ttf</string>
-	</array>
+    <!-- Configuración de URL Schemes -->
+    <key>CFBundleURLTypes</key>
+    <array>
+        <!-- Configuración para Google -->
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>com.googleusercontent.apps.909273589160-2fr6bsa23bc30nin2kr5aknssmr8sj5i</string>
+            </array>
+        </dict>
+        <!-- Configuración para Facebook -->
+        <dict>
+            <key>CFBundleTypeRole</key>
+            <string>Editor</string>
+            <key>CFBundleURLSchemes</key>
+            <array>
+                <string>fb1292635178653161</string>
+            </array>
+        </dict>
+    </array>
+
+    <!-- Configuración de Facebook -->
+    <key>FacebookAppID</key>
+    <string>1292635178653161</string>
+    <key>FacebookClientToken</key>
+    <string>1960a54faec81ed9fc9e55d815fe7c14</string>
+    <key>FacebookDisplayName</key>
+    <string>Parking App</string>
+
+    <!-- Configuración de esquemas permitidos (para Facebook y Messenger) -->
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+        <string>fbapi</string>
+        <string>fb-messenger-share-api</string>
+    </array>
+
+    <!-- Configuración de Google -->
+    <key>GIDClienteID</key>
+    <string>909273589160-2fr6bsa23bc30nin2kr5aknssmr8sj5i.apps.googleusercontent.com</string>
+
+    <!-- Configuración de Fuentes Personalizadas -->
+    <key>UIAppFonts</key>
+    <array>
+        <string>Gilroy-Bold.ttf</string>
+        <string>Gilroy-Medium.ttf</string>
+        <string>Gilroy-Regular.ttf</string>
+        <string>Gilroy-SemiBold.ttf</string>
+    </array>
 </dict>
 </plist>

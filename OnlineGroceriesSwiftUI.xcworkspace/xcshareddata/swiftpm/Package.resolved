@@ -1,5 +1,5 @@
 {
-  "originHash" : "16909a7cd511d1e92654695eddb4efc651ba2aa7c7c8343087c3c81c151f2208",
+  "originHash" : "fa28e4074c1158a3ce4b66ceca95a01a54727ad2c0c6a61434e509ac7817cf4c",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -20,12 +20,30 @@
       }
     },
     {
+      "identity" : "appauth-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/openid/AppAuth-iOS.git",
+      "state" : {
+        "revision" : "2781038865a80e2c425a1da12cc1327bcd56501f",
+        "version" : "1.7.6"
+      }
+    },
+    {
       "identity" : "countrypicker",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/mobven/CountryPicker",
+      "location" : "https://github.com/mobven/CountryPicker.git",
       "state" : {
         "revision" : "6225c2933fea6abdb8171718b22bbe289706a7aa",
         "version" : "2.0.3"
+      }
+    },
+    {
+      "identity" : "facebook-ios-sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/facebook/facebook-ios-sdk",
+      "state" : {
+        "revision" : "c19607d535864533523d1f437c84035e5fb101cf",
+        "version" : "14.1.0"
       }
     },
     {
@@ -56,6 +74,15 @@
       }
     },
     {
+      "identity" : "googlesignin-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GoogleSignIn-iOS",
+      "state" : {
+        "revision" : "65fb3f1aa6ffbfdc79c4e22178a55cd91561f5e9",
+        "version" : "8.0.0"
+      }
+    },
+    {
       "identity" : "googleutilities",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
@@ -80,6 +107,15 @@
       "state" : {
         "revision" : "a2ab612cb980066ee56d90d60d8462992c07f24b",
         "version" : "3.5.0"
+      }
+    },
+    {
+      "identity" : "gtmappauth",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/google/GTMAppAuth.git",
+      "state" : {
+        "revision" : "5d7d66f647400952b1758b230e019b07c0b4b22a",
+        "version" : "4.1.1"
       }
     },
     {

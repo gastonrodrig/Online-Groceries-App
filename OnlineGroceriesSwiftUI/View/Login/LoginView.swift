@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
-    @StateObject var loginVM = MainViewModel.shared
+    @StateObject var loginVM = AuthenticationViewModel.shared
     
     var body: some View {
         ZStack {
@@ -68,6 +68,22 @@ struct LoginView: View {
                 }
                 
                 Spacer()
+                
+                VStack {
+                    TextField("Username", text: $loginVM.txtUsername)
+                    TextField("Email", text: $loginVM.txtEmail)
+                    SecureField("Password", text: $loginVM.txtPassword)
+
+                    Button("Login") {
+                        loginVM.serviceCallLogin()
+                    }
+
+                    if loginVM.showError {
+                        Text(loginVM.errorMessage)
+                            .foregroundColor(.red)
+                    }
+                }
+                .padding()
             }
             .padding(.top, .topInsets + 64)
             .padding(.horizontal, 20)
