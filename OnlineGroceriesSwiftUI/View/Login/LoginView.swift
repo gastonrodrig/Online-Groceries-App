@@ -54,36 +54,27 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .padding(.bottom, .screenWidth * 0.03)
                 
-                RoundButton(title: "Log In")
+                RoundButton(title: "Log In") {
+                    AuthenticationViewModel.shared.serviceCallLogin()
+                }
                     .padding(.bottom, .screenWidth * 0.05)
                 
-                HStack {
-                    Text("Don't have an account?")
-                        .font(.customfont(.medium, fontSize: 14))
-                        .foregroundColor(.primaryText)
-                    
-                    Text("Sign Up")
-                        .font(.customfont(.medium, fontSize: 14))
-                        .foregroundColor(.primaryApp)
+                
+                NavigationLink {
+                    SignUpView()
+                } label: {
+                    HStack {
+                        Text("Don't have an account?")
+                            .font(.customfont(.medium, fontSize: 14))
+                            .foregroundColor(.primaryText)
+                        
+                        Text("Sign Up")
+                            .font(.customfont(.medium, fontSize: 14))
+                            .foregroundColor(.primaryApp)
+                    }
                 }
                 
                 Spacer()
-                
-                VStack {
-                    TextField("Username", text: $loginVM.txtUsername)
-                    TextField("Email", text: $loginVM.txtEmail)
-                    SecureField("Password", text: $loginVM.txtPassword)
-
-                    Button("Login") {
-                        loginVM.serviceCallLogin()
-                    }
-
-                    if loginVM.showError {
-                        Text(loginVM.errorMessage)
-                            .foregroundColor(.red)
-                    }
-                }
-                .padding()
             }
             .padding(.top, .topInsets + 64)
             .padding(.horizontal, 20)
@@ -114,9 +105,20 @@ struct LoginView: View {
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)
         .ignoresSafeArea()
+        .alert(isPresented: $loginVM.showError) {
+            Alert(
+                title: Text("Error"),
+                message: Text(loginVM.errorMessage),
+                dismissButton: .default(Text("OK")) {
+                    loginVM.errorMessage = ""
+                }
+            )
+        }
     }
 }
 
 #Preview {
-    LoginView()
+    NavigationView {
+        LoginView()
+    }
 }

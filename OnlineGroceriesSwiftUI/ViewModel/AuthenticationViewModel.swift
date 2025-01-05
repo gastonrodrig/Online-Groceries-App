@@ -10,7 +10,7 @@ import FirebaseAuth
 
 class AuthenticationViewModel: ObservableObject {
     static let shared = AuthenticationViewModel()
-
+    
     // MARK: - Propiedades Observables
     @Published var txtUsername: String = ""
     @Published var txtEmail: String = ""
@@ -20,7 +20,6 @@ class AuthenticationViewModel: ObservableObject {
     @Published var errorMessage: String = ""
     @Published var isUserLogin: Bool = false
     @Published var userObj: UserModel = UserModel(dict: [:])
-    @Published var authState: AuthState = .unauthenticated
 
     // MARK: - Estados de Autenticación
     enum AuthState {
@@ -30,48 +29,17 @@ class AuthenticationViewModel: ObservableObject {
         case error(message: String)
     }
 
-    // MARK: - Validaciones
-    private func validateFields() -> Bool {
-        if txtUsername.isEmpty {
-            updateError(message: "Please enter your username.")
-            return false
-        }
-
-        if txtEmail.isEmpty {
-            updateError(message: "Please enter your email.")
-            return false
-        }
-
-        if txtPassword.isEmpty {
-            updateError(message: "Please enter your password.")
-            return false
-        }
-
-        // Validar email
-        let tempUser = UserModel(dict: [
-            "username": txtUsername,
-            "email": txtEmail,
-            "password": txtPassword,
-            "mobile": ""
-        ])
-
-        if !tempUser.isValidEmail {
-            updateError(message: "Please enter a valid email address.")
-            return false
-        }
-
-        // Validar nombre de usuario
-        if !tempUser.isValidUsername {
-            updateError(message: "Username must be at least 3 characters.")
-            return false
-        }
-
-        return true
-    }
-
+    @Published var authState: AuthState = .unauthenticated
+    
     // MARK: - Iniciar Sesión con Email/Contraseña
     func serviceCallLogin() {
-        guard validateFields() else { return }
+        let loginForm = LoginForm(email: txtEmail, password: txtPassword)
+
+        // Validar campos usando el modelo
+        if let validationMessage = loginForm.validationMessage {
+            updateError(message: validationMessage)
+            return
+        }
 
         authState = .loading
 
@@ -87,50 +55,69 @@ class AuthenticationViewModel: ObservableObject {
         }
     }
     
-    // MARK: - Google Login
-   func serviceCallGoogleLogin() {
-       FirebaseAuthService.shared.loginWithGoogle { result in
-           switch result {
-           case .success(let user):
-               self.setUserData(user: user)
-               print("User logged in: \(String(describing: user.email))")
-           case .failure(let error):
-               print("Login failed with error: \(error.localizedDescription)")
-           }
-       }
-   }
+    // MARK: - Registro de Usuario
+    func serviceCallRegister() {
+        let registerForm = RegisterForm(username: txtUsername, email: txtEmail, password: txtPassword)
 
-   // MARK: - Facebook Login
-   func serviceCallFacebookLogin() {
-       FirebaseAuthService.shared.loginWithFacebook { result in
-           switch result {
-           case .success(let user):
-               self.setUserData(user: user)
-               print("User logged in: \(String(describing: user.email))")
-           case .failure(let error):
-               print("Login failed with error: \(error.localizedDescription)")
-           }
-           
-       }
-   }
+        // Validar campos usando el modelo
+        if let validationMessage = registerForm.validationMessage {
+            updateError(message: validationMessage)
+            return
+        }
+
+        authState = .loading
+
+        FirebaseAuthService.shared.registerWithEmail(email: txtEmail, password: txtPassword) { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    self?.setUserData(user: user)
+                case .failure(let error):
+                    self?.updateError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Google Login
+    func serviceCallGoogleLogin() {
+        FirebaseAuthService.shared.loginWithGoogle { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    self?.setUserData(user: user)
+                case .failure(let error):
+                    self?.updateError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
+
+    // MARK: - Facebook Login
+    func serviceCallFacebookLogin() {
+        FirebaseAuthService.shared.loginWithFacebook { [weak self] result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let user):
+                    self?.setUserData(user: user)
+                case .failure(let error):
+                    self?.updateError(message: error.localizedDescription)
+                }
+            }
+        }
+    }
 
     // MARK: - Guardar Datos del Usuario
     func setUserData(user: User) {
-        userObj = UserModel(dict: [
-            "uid": user.uid,
-            "username": txtUsername,
-            "name": user.displayName ?? "",
-            "email": user.email ?? "",
-            "mobile": ""
-        ])
-        print(userObj)
+        userObj = UserModel(uid: user.uid,
+                            username: txtUsername,
+                            name: user.displayName ?? "",
+                            email: user.email ?? "",
+                            mobile: "")
+        print(userObj.toDictionary())
         isUserLogin = true
-
-        // Limpiar campos
-        txtUsername = ""
-        txtEmail = ""
-        txtPassword = ""
-        isShowPassword = false
+        authState = .authenticated(user: user)
+        clearFields()
     }
 
     // MARK: - Manejo de Errores
