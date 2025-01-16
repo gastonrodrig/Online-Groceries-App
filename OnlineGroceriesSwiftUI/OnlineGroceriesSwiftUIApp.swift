@@ -10,11 +10,17 @@ import SwiftUI
 @main
 struct OnlineGroceriesSwiftUIApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    @StateObject var authVM = AuthenticationViewModel.shared
 
     var body: some Scene {
         WindowGroup {
             NavigationView {
-                WelcomeView()
+                if authVM.isUserLogin {
+                    MainTabView()
+                } else {
+                    WelcomeView()
+                }
             }
         }
     }

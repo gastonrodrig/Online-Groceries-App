@@ -23,6 +23,7 @@ struct LineTextField: View {
             TextField(placeholder, text: $txt)
                 .keyboardType(keyboardType)
                 .disableAutocorrection(true)
+                .textInputAutocapitalization(.never)
                 .frame(height: 40)
             
             Divider()
@@ -46,10 +47,12 @@ struct LineSecureField: View {
                 TextField(placeholder, text: $txt)
                     .modifier(ShowButton(isShow: $isShowPassword))
                     .disableAutocorrection(true)
+                    .textInputAutocapitalization(.never)
                     .frame(height: 40)
             } else {
                 SecureField(placeholder, text: $txt)
                     .modifier(ShowButton(isShow: $isShowPassword))
+                    .textInputAutocapitalization(.never)
                     .frame(height: 40)
             }
             

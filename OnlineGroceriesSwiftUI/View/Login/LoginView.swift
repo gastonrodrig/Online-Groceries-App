@@ -55,7 +55,7 @@ struct LoginView: View {
                 .padding(.bottom, .screenWidth * 0.03)
                 
                 RoundButton(title: "Log In") {
-                    AuthenticationViewModel.shared.serviceCallLogin()
+                    AuthenticationViewModel.shared.loginWithEmail()
                 }
                     .padding(.bottom, .screenWidth * 0.05)
                 

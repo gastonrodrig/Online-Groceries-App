@@ -7,13 +7,23 @@
 
 import Foundation
 
-struct UserModel {
+struct UserModel: Codable {
     // MARK: - Propiedades
     var uid: String
     var username: String
     var name: String
     var email: String
     var mobile: String
+    
+    // MARK: - Inicializador personalizado para manejar valores predeterminados
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.uid = try container.decodeIfPresent(String.self, forKey: .uid) ?? ""
+        self.username = try container.decodeIfPresent(String.self, forKey: .username) ?? ""
+        self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        self.email = try container.decodeIfPresent(String.self, forKey: .email) ?? ""
+        self.mobile = try container.decodeIfPresent(String.self, forKey: .mobile) ?? ""
+    }
 
     // MARK: - Inicializadores
     // Inicializador predeterminado con diccionario

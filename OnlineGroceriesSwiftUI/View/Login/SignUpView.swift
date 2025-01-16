@@ -76,7 +76,7 @@ struct SignUpView: View {
                     }
                     
                     RoundButton(title: "Sing Up") {
-                        AuthenticationViewModel.shared.serviceCallRegister()
+                        AuthenticationViewModel.shared.registerWithEmail()
                     }
                     .padding(.bottom, .screenWidth * 0.05)
                     

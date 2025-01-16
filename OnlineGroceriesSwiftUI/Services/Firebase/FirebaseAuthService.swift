@@ -18,18 +18,37 @@ class FirebaseAuthService {
     // MARK: - Login con Email y Contraseña
     func loginWithEmail(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(.failure(error))
-                return
+            if let error = error as NSError? {
+                if let authErrorCode = AuthErrorCode(rawValue: error.code) {
+                    switch authErrorCode {
+                    case .wrongPassword:
+                        completion(.failure(NSError(domain: "FirebaseAuthService", code: error.code, userInfo: [NSLocalizedDescriptionKey: "La contraseña es incorrecta."])))
+                        return
+                    case .userNotFound:
+                        completion(.failure(NSError(domain: "FirebaseAuthService", code: error.code, userInfo: [NSLocalizedDescriptionKey: "El correo no está registrado."])))
+                        return
+                    case .accountExistsWithDifferentCredential:
+                        completion(.failure(NSError(domain: "FirebaseAuthService", code: error.code, userInfo: [NSLocalizedDescriptionKey: "Este correo ya está registrado con un proveedor. Por favor, utiliza el método de inicio de sesión correcto."])))
+                        return
+                    default:
+                        completion(.failure(NSError(domain: "FirebaseAuthService", code: error.code, userInfo: [NSLocalizedDescriptionKey: "Ocurrió un error inesperado"])))
+                        return
+                    }
+                } else {
+                    print("Error no corresponde a AuthErrorCode")
+                    completion(.failure(error))
+                }
             }
-
+            
             if let user = authResult?.user {
                 completion(.success(user))
             } else {
-                completion(.failure(NSError(domain: "FirebaseAuthService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred"])))
+                let unknownError = NSError(domain: "FirebaseAuthService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Ocurrió un error desconocido al iniciar sesión."])
+                completion(.failure(unknownError))
             }
         }
     }
+
 
     // MARK: - Logout
     func logout(completion: @escaping (Result<Void, Error>) -> Void) {
@@ -43,19 +62,33 @@ class FirebaseAuthService {
 
     // MARK: - Registro de Usuario
     func registerWithEmail(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
+        // Intentar crear el usuario
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
+            if let error = error as NSError? {
+                // Manejo de errores específicos
+                if error.code == AuthErrorCode.emailAlreadyInUse.rawValue {
+                    // El correo ya está registrado
+                    let errorDescription = "El correo ya está registrado. Intenta iniciar sesión o usar un proveedor diferente."
+                    let error = NSError(domain: "FirebaseAuthService", code: error.code, userInfo: [NSLocalizedDescriptionKey: errorDescription])
+                    completion(.failure(error))
+                    return
+                }
+                
+                // Otros errores
                 completion(.failure(error))
                 return
             }
-
+            
+            // Registro exitoso
             if let user = authResult?.user {
                 completion(.success(user))
             } else {
-                completion(.failure(NSError(domain: "FirebaseAuthService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Unknown error occurred"])))
+                let unknownError = NSError(domain: "FirebaseAuthService", code: -1, userInfo: [NSLocalizedDescriptionKey: "Ocurrió un error desconocido al crear el usuario."])
+                completion(.failure(unknownError))
             }
         }
     }
+
     
     
     // MARK: - Login con Google
