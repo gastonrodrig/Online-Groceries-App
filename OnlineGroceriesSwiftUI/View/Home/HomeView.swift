@@ -49,11 +49,10 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 15) {
-                        ForEach(0...5, id: \.self) { index in
-                            
-                            ProductCell(image: "banana",name: "Banana", text: "7pcs, price",price: "S/. 2,99") {
+                        ForEach(homeVM.offerArr, id: \.id) { pObj in
+                            ProductCell(pObject: pObj, didAddCart: {
                                 
-                            }
+                            })
                         }
                     }
                     .padding(.horizontal, 20)
@@ -67,48 +66,33 @@ struct HomeView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 15) {
-                        ForEach(0...5, id: \.self) { index in
-                            
-                            ProductCell(image: "banana",name: "Banana", text: "7pcs, price",price: "S/. 2,99") {
+                        ForEach(homeVM.bestArr, id: \.id) { pObj in
+                            ProductCell(pObject: pObj, didAddCart: {
                                 
-                            }
+                            })
                         }
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 4)
                 }
                 
-                SectionTitleAll(title: "Groceries", titleAll: "See All") {
+                SectionTitleAll(title: "Categories", titleAll: "See All") {
                     
                 }
                 .padding(.horizontal, 20)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHStack(spacing: 15) {
-                        ForEach(0...5, id: \.self) { index in
-                            
-                            CategoryCell(color: Color(hex: "F8A44C")) {
+                        ForEach(homeVM.catArr, id: \.id) { pObj in
+                            CategoryCell(cObject: pObj, didAddCart: {
                                 
-                            }
+                            })
                         }
                     }
                     .padding(.horizontal, 20)
                     .padding(.vertical, 4)
                 }
-                .padding(.bottom, 8)
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHStack(spacing: 15) {
-                        ForEach(0...5, id: \.self) { index in
-                            
-                            ProductCell(image: "banana",name: "Banana", text: "7pcs, price",price: "S/. 2,99") {
-                                
-                            }
-                        }
-                    }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 4)
-                }
+                .padding(.bottom, 10)
             }
         }
         .ignoresSafeArea()

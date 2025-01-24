@@ -13,6 +13,7 @@
 		041574732D275CEE00941805 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 041574722D275CEE00941805 /* GoogleSignIn */; };
 		041574752D275CEE00941805 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 041574742D275CEE00941805 /* GoogleSignInSwift */; };
 		041574782D27604000941805 /* CountryPicker in Frameworks */ = {isa = PBXBuildFile; productRef = 041574772D27604000941805 /* CountryPicker */; };
+		0437081C2D3C924200E64E67 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 0437081B2D3C924200E64E67 /* SDWebImageSwiftUI */; };
 		045F5C802D2461D300DD8ACC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */; };
 		067EFBC9A4E6A0F2C1A3B102 /* Pods_OnlineGroceriesSwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 419A54DE7D29718144210164 /* Pods_OnlineGroceriesSwiftUITests.framework */; };
 		DF33A37F3C565C4E4361BBDC /* Pods_OnlineGroceriesSwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C112B7E35B91A4B7015898B /* Pods_OnlineGroceriesSwiftUI.framework */; };
@@ -89,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0437081C2D3C924200E64E67 /* SDWebImageSwiftUI in Frameworks */,
 				041574782D27604000941805 /* CountryPicker in Frameworks */,
 				041574752D275CEE00941805 /* GoogleSignInSwift in Frameworks */,
 				041574732D275CEE00941805 /* GoogleSignIn in Frameworks */,
@@ -183,6 +185,7 @@
 				041574722D275CEE00941805 /* GoogleSignIn */,
 				041574742D275CEE00941805 /* GoogleSignInSwift */,
 				041574772D27604000941805 /* CountryPicker */,
+				0437081B2D3C924200E64E67 /* SDWebImageSwiftUI */,
 			);
 			productName = OnlineGroceriesSwiftUI;
 			productReference = 044671582D23517000204EA4 /* OnlineGroceriesSwiftUI.app */;
@@ -269,6 +272,7 @@
 				0415746E2D275CDC00941805 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 				041574712D275CEE00941805 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				041574762D27604000941805 /* XCRemoteSwiftPackageReference "CountryPicker" */,
+				0437081A2D3C924200E64E67 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04DDB7112D1F918F00E47C4A;
@@ -755,6 +759,14 @@
 				minimumVersion = 2.0.3;
 			};
 		};
+		0437081A2D3C924200E64E67 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -782,6 +794,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 041574762D27604000941805 /* XCRemoteSwiftPackageReference "CountryPicker" */;
 			productName = CountryPicker;
+		};
+		0437081B2D3C924200E64E67 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0437081A2D3C924200E64E67 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

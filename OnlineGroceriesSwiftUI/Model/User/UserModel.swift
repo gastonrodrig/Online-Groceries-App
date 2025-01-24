@@ -8,7 +8,6 @@
 import Foundation
 
 struct UserModel: Codable {
-    // MARK: - Propiedades
     var uid: String
     var username: String
     var name: String
@@ -25,8 +24,7 @@ struct UserModel: Codable {
         self.mobile = try container.decodeIfPresent(String.self, forKey: .mobile) ?? ""
     }
 
-    // MARK: - Inicializadores
-    // Inicializador predeterminado con diccionario
+    // MARK: - Inicializador predeterminado con diccionario
     init(dict: [String: Any]) {
         self.uid = dict["uid"] as? String ?? ""
         self.username = dict["username"] as? String ?? ""
@@ -35,7 +33,7 @@ struct UserModel: Codable {
         self.mobile = dict["mobile"] as? String ?? ""
     }
 
-    // Inicializador adicional (opcional, para inicialización manual)
+    // MARK: - Inicializador adicional (opcional, para inicialización manual)
     init(uid: String = "", username: String = "", name: String = "", email: String = "", mobile: String = "") {
         self.uid = uid
         self.username = username
@@ -62,8 +60,7 @@ struct UserModel: Codable {
         return validationMessage == nil
     }
 
-    // MARK: - Métodos de Conversión
-    // Convertir a diccionario
+    // MARK: - Convertir a diccionario
     func toDictionary() -> [String: Any] {
         return [
             "uid": uid,

@@ -6,6 +6,7 @@
 //
 
 struct CreateUserNoProviderModel: Codable {
+    var uid: String?
     var username: String
     var email: String
 }

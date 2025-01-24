@@ -103,7 +103,7 @@ class AuthenticationViewModel: ObservableObject {
                     } else {
                         // Usuario encontrado, cargar datos
                         self?.userObj = userModel
-                        self?.setUserData(user: user)
+                        self?.setUserData(userModel: userModel, user: user)
                         self?.updateSuccess(message: successMessage)
                     }
                 case .failure:
@@ -116,19 +116,47 @@ class AuthenticationViewModel: ObservableObject {
     
     // MARK: - Registro de nuevo User en la Base de Datos
     private func registerNewUser(user: User, email: String, successMessage: String) {
-        let newUser = CreateUserWithProviderModel(email: email)
-        UserService.shared.createUserWithProvider(user: newUser) { [weak self] createResult in
-            DispatchQueue.main.async {
-                switch createResult {
-                case .success:
-                    self?.setUserData(user: user)
-                    self?.updateSuccess(message: "¡Registro exitoso!")
-                case .failure(let error):
-                    self?.updateError(message: "Error al registrar usuario: \(error.localizedDescription)")
+        if !txtUsername.isEmpty {
+            // Registro para usuario sin proveedor
+            let newUser = CreateUserNoProviderModel(username: txtUsername, email: email)
+            UserService.shared.createUserNoProvider(user: newUser) { [weak self] createResult in
+                DispatchQueue.main.async {
+                    switch createResult {
+                    case .success(let createdUser):
+                        let userModel = UserModel(uid: createdUser.uid!,
+                                                  username: newUser.username,
+                                                  name: user.displayName ?? "",
+                                                  email: newUser.email,
+                                                  mobile: user.phoneNumber ?? "")
+                        self?.setUserData(userModel: userModel, user: user)
+                        self?.updateSuccess(message: "¡Registro exitoso!")
+                    case .failure(let error):
+                        self?.updateError(message: "Error al registrar usuario: \(error.localizedDescription)")
+                    }
+                }
+            }
+        } else {
+            // Registro para usuario con proveedor
+            let newUser = CreateUserWithProviderModel(email: email)
+            UserService.shared.createUserWithProvider(user: newUser) { [weak self] createResult in
+                DispatchQueue.main.async {
+                    switch createResult {
+                    case .success(let createdUser):
+                        let userModel = UserModel(uid: createdUser.uid!,
+                                                  username: user.displayName ?? "",
+                                                  name: user.displayName ?? "",
+                                                  email: newUser.email,
+                                                  mobile: user.phoneNumber ?? "")
+                        self?.setUserData(userModel: userModel, user: user)
+                        self?.updateSuccess(message: "¡Registro exitoso!")
+                    case .failure(let error):
+                        self?.updateError(message: "Error al registrar usuario: \(error.localizedDescription)")
+                    }
                 }
             }
         }
     }
+
 
     // MARK: - Validación de Campos
     private func validateFields(_ fields: [String]) -> Bool {
@@ -154,12 +182,13 @@ class AuthenticationViewModel: ObservableObject {
     }
 
     // MARK: - Guardar Datos del Usuario (Localmente)
-    func setUserData(user: User) {
-        userObj = UserModel(uid: user.uid,
-                            username: txtUsername,
-                            name: user.displayName ?? "",
-                            email: user.email ?? "",
-                            mobile: "")
+    func setUserData(userModel: UserModel, user: User) {
+        userObj = UserModel(uid: userModel.uid,
+                            username: userModel.username,
+                            name: userModel.name,
+                            email: userModel.email,
+                            mobile: userModel.mobile)
+        
         isUserLogin = true
         authState = .authenticated(user: user)
         clearFields()

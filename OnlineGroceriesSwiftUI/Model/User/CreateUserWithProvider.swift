@@ -6,5 +6,6 @@
 //
 
 struct CreateUserWithProviderModel: Codable {
+    var uid: String?
     var email: String
 }
