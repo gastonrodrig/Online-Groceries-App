@@ -122,17 +122,17 @@
 		04DDB7112D1F918F00E47C4A = {
 			isa = PBXGroup;
 			children = (
-				045F5C4D2D24451B00DD8ACC /* README.md */,
 				045F5C4C2D2442B100DD8ACC /* .gitignore */,
-				04DDB72D2D1F919000E47C4A /* OnlineGroceriesSwiftUITests */,
-				04DDB7372D1F919000E47C4A /* OnlineGroceriesSwiftUIUITests */,
-				04DDB71C2D1F918F00E47C4A /* OnlineGroceriesSwiftUI */,
 				044671582D23517000204EA4 /* OnlineGroceriesSwiftUI.app */,
+				045F5C4D2D24451B00DD8ACC /* README.md */,
+				045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */,
 				04C0AD102D23550B00F442D5 /* OnlineGroceriesSwiftUITests.xctest */,
 				04C0AD112D23550B00F442D5 /* OnlineGroceriesSwiftUIUITests.xctest */,
-				045F5C7F2D2461D300DD8ACC /* GoogleService-Info.plist */,
-				F2936E17BE97220F756E64CE /* Pods */,
 				6B8BFDDDE4A16E24A4F483A9 /* Frameworks */,
+				04DDB71C2D1F918F00E47C4A /* OnlineGroceriesSwiftUI */,
+				04DDB72D2D1F919000E47C4A /* OnlineGroceriesSwiftUITests */,
+				04DDB7372D1F919000E47C4A /* OnlineGroceriesSwiftUIUITests */,
+				F2936E17BE97220F756E64CE /* Pods */,
 			);
 			sourceTree = "<group>";
 		};

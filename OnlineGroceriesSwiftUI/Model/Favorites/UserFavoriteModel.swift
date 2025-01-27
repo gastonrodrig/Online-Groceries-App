@@ -12,7 +12,12 @@ struct UserFavoriteModel: Codable {
     var product: ProductModel
     var user: UserModel
     
-    // MARK: - Convertir a diccionario
+    init(dict: [String: Any]) {
+        self.id = dict["id"] as? String ?? ""
+        self.product = ProductModel(dict: dict["product"] as? [String: Any] ?? [:])
+        self.user = UserModel(dict: dict["user"] as? [String: Any] ?? [:])
+    }
+    
     func toDictionary() -> [String: Any] {
         return [
             "id": id,

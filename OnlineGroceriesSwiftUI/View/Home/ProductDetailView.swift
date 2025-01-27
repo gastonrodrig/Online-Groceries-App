@@ -12,6 +12,8 @@ struct ProductDetailView: View {
     
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     @StateObject var detailVM: ProductDetailViewModel
+    @StateObject var cartVM = CartViewModel.shared
+    @StateObject var homeVM = HomeViewModel.shared
     
     var body: some View {
         ZStack {
@@ -215,9 +217,15 @@ struct ProductDetailView: View {
                 .padding(.horizontal, 20)
                 
                 RoundButton(title: "Add to Basket") {
-                    
+                    cartVM.addToCart(product: detailVM.pObj, qty: detailVM.qty)
+                    cartVM.fetchCartItemsByUser {
+                        withAnimation {
+                            homeVM.selectTab = 2
+                        }
+                    }
                 }
                 .padding(20)
+                
             }
             
             VStack {
@@ -247,6 +255,9 @@ struct ProductDetailView: View {
             .padding(.top, .topInsets)
             .padding(.horizontal, 20)
         }
+        .alert(isPresented: $detailVM.showError, content: {
+            Alert(title: Text("Online Groceries"), message: Text(detailVM.errorMessage), dismissButton: .default(Text("Ok")))
+        })
         .navigationTitle("")
         .navigationBarBackButtonHidden(true)
         .navigationBarHidden(true)

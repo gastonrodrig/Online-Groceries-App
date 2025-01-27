@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     @StateObject var homeVM = HomeViewModel.shared
     
     var body: some View {
@@ -92,7 +93,7 @@ struct HomeView: View {
                     .padding(.horizontal, 20)
                     .padding(.vertical, 4)
                 }
-                .padding(.bottom, 10)
+                .padding(.bottom, .bottomInsets + 80)
             }
         }
         .ignoresSafeArea()
@@ -100,5 +101,7 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    NavigationView {
+        HomeView()
+    }
 }

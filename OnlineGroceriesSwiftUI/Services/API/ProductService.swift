@@ -86,4 +86,19 @@ class ProductService {
             }
         }
     }
+    
+    // Obtener productos por categoria (GET /product/category{categoryId})
+    func getProductsByCategoryId(categoryId: String, completion: @escaping (Result<[ProductModel], Error>) -> Void) {
+        let newURL = "\(URL)/category/\(categoryId)"
+        NetworkManager.shared.request(url: newURL, method: "GET") { result in
+            switch result {
+            case .success(let data):
+                NetworkManager.shared.decode(data) { (result: Result<[ProductModel], Error>) in
+                    completion(result)
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

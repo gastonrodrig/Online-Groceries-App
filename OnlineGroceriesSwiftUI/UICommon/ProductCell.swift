@@ -37,6 +37,7 @@ struct ProductCell: View {
             "tamanio": 10559910
         ]
     ])
+    @State var width: Double = 180
     var didAddCart: (()->())?
     
     var body: some View {
@@ -88,7 +89,7 @@ struct ProductCell: View {
                 }
             }
             .padding(15)
-            .frame(width: 180, height: 230)
+            .frame(width: width, height: 230)
             .overlay {
                 RoundedRectangle(cornerRadius: 16)
                     .stroke(Color.placeholder.opacity(0.5), lineWidth: 1)

@@ -16,17 +16,19 @@ class FavoriteViewModel: ObservableObject {
     
     @Published var favListArr: [UserFavoriteModel] = []
     
-    private var userId = ""
+    private var userId = "pNDMUdXYgaFzQvCt3093"
     
     init() {
         userObj = AuthenticationViewModel.shared.userObj
         self.userId = userObj.uid
+        self.fetchFavoritesByUser()
     }
     
     // MARK: - Obtener favoritos según usuario
     func fetchFavoritesByUser() {
         UserFavoritesService.shared.getUserFavoritesByUserId(userId: userId) { [weak self] result in
             DispatchQueue.main.async {
+                print(result)
                 switch result {
                 case .success(let favListData):
                     self?.favListArr = favListData
