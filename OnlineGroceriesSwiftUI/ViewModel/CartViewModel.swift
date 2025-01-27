@@ -18,11 +18,11 @@ class CartViewModel: ObservableObject {
     @Published var cartItems: [CartModel] = []
     
     private var qty = 0
-    private var userId = "pNDMUdXYgaFzQvCt3093" // Ajusta según tu lógica de usuario
+    private var userId = ""
     
     init() {
-//        userObj = AuthenticationViewModel.shared.userObj
-//        self.userId = userObj.uid
+        userObj = AuthenticationViewModel.shared.userObj
+        self.userId = userObj.uid
         fetchCartItemsByUser()
     }
     
@@ -36,7 +36,6 @@ class CartViewModel: ObservableObject {
                 } else if case .failure(let error) = result {
                     self?.showErrorMessage(error.localizedDescription)
                 }
-                // Llama al closure si se proporcionó
                 completion?()
             }
         }
